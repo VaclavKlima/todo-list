@@ -1,5 +1,7 @@
-<div class="w-full h-full p-4 border-2 border-cyan-400 bg-white/10 backdrop-blur-md shadow-lg min-w-0.5 flex flex-col"
-     style="box-shadow: 0 4px 30px rgba(0,0,0,0.2); border-image: linear-gradient(90deg, #00fff7 0%, #ff00ea 100%) 1; background: linear-gradient(135deg, rgba(0,255,247,0.15) 0%, rgba(255,0,234,0.10) 100%); min-height: 10rem;">
+<div @class(['w-full h-full p-4 border-2 border-cyan-400 bg-gradient-to-bl backdrop-blur-md shadow-lg min-w-0.5 flex flex-col',
+                $this->isCompleted ? 'from-green-500/30 to-green-500/10' : 'from-white/1 to-white/10'
+            ])
+     style="box-shadow: 0 4px 30px rgba(0,0,0,0.2); border-image: linear-gradient(90deg, #00fff7 0%, #ff00ea 100%) 1; min-height: 10rem;">
 
     <h2 class="text-xl font-bold text-cyan-400 mb-2">{{ $todoList->title }}</h2>
 

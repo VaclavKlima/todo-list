@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\TodoList;
 use Illuminate\Contracts\View\View;
+use Livewire\Attributes\Computed;
 use Livewire\Component;
 
 class TodoCard extends Component
@@ -15,6 +16,13 @@ class TodoCard extends Component
     public function render(): View
     {
         return view('livewire.todo-card');
+    }
+
+    #[Computed]
+    public function isCompleted(): bool
+    {
+        return $this->todoList->todos->isNotEmpty() &&
+            $this->todoList->todos->where('is_completed', true)->count() === $this->todoList->todos->count();
     }
 
 
