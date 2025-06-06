@@ -22,4 +22,5 @@ A simple Todo List application built with PHP and JavaScript.
    composer install
    npm install
    vite build
+   php artisan migrate
    ```
